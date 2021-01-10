@@ -1,0 +1,150 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-image: url(images/background2.jpg);
+
+}
+
+.btn-outline-success{
+	color: white;
+	border-color:white;
+}
+
+
+/*svg image animation*/
+.svg_one_container svg{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+.info{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'GFS Didot', cursive;
+	background-image: url(images/background2.jpg);
+	border: 0px;
+	 
+}
+.info img{
+	border-radius: 50%;
+	margin-left: 20px;
+	
+	margin-top: 10px;
+	
+}
+
+
+
+
+#left{
+	margin-left: 30%;
+}
+
+
+.birthdayWish{
+	
+	 
+     width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#birthdayWishbtn{
+	border-radius: 360px;
+	border: 3px solid black;
+	font-size: 18px;
+}
+#birthdayPerson{
+	font-family: 'Courgette', cursive;
+	font-size: 2em;
+	
+}
+#footer{
+	color: white;
+	font-family: 'GFS Didot', cursive;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+/*animation*/
+
+#gilter{
+	animation: gilterMove 1s infinite alternate;
+}
+
+@keyframes gilterMove{
+	0%{
+		transform: translateY(0px);
+
+	}
+	100%{
+		transform: translateY(40px);
+
+	}
+}
+
+#boy_baloon{
+	animation: boy_baloonMove 1s infinite alternate;
+	transform-origin: bottom;
+	
+}
+@keyframes boy_baloonMove{
+	0%{
+		transform: rotateZ(0deg);
+
+	}
+	100%{
+		transform: rotateZ(1deg);
+
+	}
+}
+
+
+#girl_baloon{
+	animation: girl_baloonMove 1s infinite alternate;
+	transform-origin: bottom;
+	
+}
+@keyframes girl_baloonMove{
+	0%{
+		transform: rotateZ(0deg);
+
+	}
+	100%{
+		transform: rotateZ(1deg);
+
+	}
+}
+
+#group_baloon{
+	animation: group_baloonMove 5s infinite;
+	transform-origin: bottom;
+	
+}
+@keyframes group_baloonMove{
+	0%{
+		transform: translateY(1000px);
+
+	}
+	100%{
+		transform: translateY(0px);
+
+	}
+}
+
+#Vector{
+	animation: VectorMove 25s infinite alternate;
+}
+@keyframes VectorMove{
+	0%{
+		fill: yellow;
+
+	}
+	100%{
+		fill: red;
+
+	}
+}
