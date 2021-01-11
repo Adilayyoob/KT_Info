@@ -1,4 +1,4 @@
-
+var member =34;
     var ourRequest = new XMLHttpRequest();
     ourRequest.open("GET","https://adilayyoob.github.io/json-test/data.json");
     ourRequest.onload = function() {
@@ -27,7 +27,7 @@ document.getElementById("birthdayWishbtn").addEventListener("click", function(){
 	var t_day = today.getDate();
 	var text = "";
 	var flag=0;
-    for (var i = 0; i < 34; i++) {
+    for (var i = 0; i < member; i++) {
     	if( t_month == d[i].DateOfBirth[1] && t_day == d[i].DateOfBirth[2]){
     		text += "HAPPY BIRTHDAY " + d[i].name + "<br>";
     		console.log("HAPPY BIRTHDAY " + d[i].name + "<br>");
@@ -45,7 +45,7 @@ document.getElementById("birthdayWishbtn").style.display= "none";
 
 //age finder
 function age(x) {
-	for (var i = 0; i < 34; i++) {
+	for (var i = 0; i < member; i++) {
 		if(d[i].rollNo === x){
 			var s_year = d[i].DateOfBirth[0];
 	        var s_month = d[i].DateOfBirth[1];
@@ -73,7 +73,7 @@ document.getElementById("image_place").src="images/0.jpg";
 var c=1;
 
 document.getElementById("right").addEventListener("click", function(){
-	for (var i = 1; i < 34; i++) {
+	for (var i = 1; i < member; i++) {
 		document.getElementById("rollNo").innerHTML="ROLL NUMBER: "+d[c].rollNo;
         document.getElementById("name").innerHTML="NAME: "+d[c].name;
 		document.getElementById("age").innerHTML="AGE: "+age(d[c].rollNo);
@@ -90,7 +90,7 @@ document.getElementById("right").addEventListener("click", function(){
 	}
 });
 document.getElementById("left").addEventListener("click", function(){
-	for (var i = 1; i < 34; i++) {
+	for (var i = 1; i < member; i++) {
 		c=c-1;
 		document.getElementById("rollNo").innerHTML="ROLL NUMBER: "+d[c].rollNo;
         document.getElementById("name").innerHTML="NAME: "+d[c].name;
@@ -109,8 +109,34 @@ document.getElementById("left").addEventListener("click", function(){
 	}
 });
 
+//search
+document.getElementById("search_rollbtn").addEventListener("click", function(){
+	var flag=0;
+	var rollno = Number(document.getElementById("search_roll").value);
+	console.log(rollno);
+	for (var i = 1; i < member; i++) {
+		if(rollno===d[i].rollNo)
+		{
+			c = rollno;
+			document.getElementById("rollNo").innerHTML="ROLL NUMBER: "+d[i].rollNo;
+	        document.getElementById("name").innerHTML="NAME: "+d[i].name;
+			document.getElementById("age").innerHTML="AGE: "+age(d[i].rollNo);
+			document.getElementById("p_no").innerHTML="PHONE NUMBER: "+d[i].phoneNumber;
+			document.getElementById("email").innerHTML="EMAIL ADDRESS: "+d[i].email;
+			document.getElementById("address").innerHTML="ADDRESS: "+d[i].address;
+			document.getElementById("mName").innerHTML="MOTHER NAME: "+d[i].mName;
+			document.getElementById("fName").innerHTML="FATHER NAME: "+d[i].fName;
+			document.getElementById("sName").innerHTML="SPOUSE NAME: "+d[i].spouseName;
+			document.getElementById("image_place").src="images/"+i+".jpg";
+			flag=1;
+			break;
 
-document.getElementById("image_place").src="images/0.jpg";
-
+		}
+	}
+	if(flag != 1)
+	{
+	alert("Not Found!");
+    }
+});
 
 };
